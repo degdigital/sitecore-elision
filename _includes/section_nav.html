@@ -1,0 +1,64 @@
+{% if include.page_url and include.page_url != "" %}
+	{% assign page_url = include.page_url %}
+{% else %}
+	{% assign page_url_parts = page.url | split: '/' %}
+	{% assign page_url_parts_shifted = page_url_parts | shift: 2 | join: "/" %}
+	{% assign page_url = page.url | replace: page_url_parts_shifted %}
+{% endif %}
+
+{% if page_url contains "index.html" %}
+	{% assign url_parts = page_url | split: '/' %}
+	{% assign rm = url_parts | last %}
+	{% assign base_url = page_url | replace: rm %}
+{% else %}
+	{% assign base_url = page_url %}
+{% endif %}
+
+{% assign base_url_parts = base_url | split: '/' %}
+{% assign base_url_parts_size = base_url_parts | size %}
+{% assign base_url_parts_size = base_url_parts_size | plus:1 %}
+
+{% assign nodes = site.array %}
+
+{% for node in site.pages %}
+	{% if node.url contains base_url %}
+		{% if node.url contains "index.html" %}
+			{% assign url_parts = node.url | split: '/' %}
+			{% assign rm = url_parts | last %}
+			{% assign node_base_url = node.url | replace: rm %}
+		{% else %}
+			{% assign node_base_url = node.url %}
+		{% endif %}
+
+		{% assign node_url_parts = node_base_url | split: '/' %}
+		{% assign node_url_parts_size = node_url_parts | size %}
+
+		{% if node_url_parts_size == base_url_parts_size %}
+			{% assign nodes = nodes | push:node %}
+		{% endif %}
+	{% endif %}
+{% endfor %}
+
+{% assign nodes_size = nodes | size %}
+
+{% if nodes_size > 0 %}
+<ul>
+	{% for node in nodes %}
+		{% if node.url contains "index.html" %}
+			{% assign url_parts = node.url | split: '/' %}
+			{% assign rm = url_parts | last %}
+			{% assign node_url = node.url | replace: rm %}
+		{% else %}
+			{% assign node_url = node.url %}
+		{% endif %}
+		<li>
+			{% if node.url == page.url %}
+				<span class="active">{% if node.nav_title %}{{ node.nav_title }}{% else %}{{ node.title }}{% endif %}</span>
+			{% else %}
+				<a href="{{ node_url | prepend: site.baseurl }}">{% if node.nav_title %}{{ node.nav_title }}{% else %}{{ node.title }}{% endif %}</a>
+			{% endif %}
+			{% include section_nav.html page_url=node.url %}
+		</li>
+	{% endfor %}
+</ul>
+{% endif %}

@@ -1,0 +1,8 @@
+<meta charset="UTF-8">
+<title>{{ site.name }}{% if page.title %} - {{ page.title }} {% endif%}</title>
+{% if page.description %}<meta name="description" content="{{ page.description | xml_escape }}">{% endif %}
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:500,600' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+<link rel="stylesheet" id="switch_style" href="{{ "/css/grid.css" | prepend: site.baseurl }}">
+<link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ "/feed.xml" | prepend: site.baseurl }}">

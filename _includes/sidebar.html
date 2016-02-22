@@ -1,0 +1,43 @@
+<div class="sidebar">
+
+<div class="widget">
+    {% include section_nav.html %}
+</div>
+
+
+{% comment %}
+{% for coll in site.collections %}
+    {% assign collection = coll[1] %}
+
+    {% if page.collection contains collection.label %}
+
+        {% for doc in collection.docs  %}
+            {% if doc.path contains "index.md" %}
+                {% assign collection_home = doc %}
+            {% endif %}
+        {% endfor %}
+
+        <div class="widget">
+            {% if collection_home and collection_home.url != page.url %}
+            <h3 class="title"><a href="{{ collection_home.url | prepend: site.baseurl }}">{{ collection_home.title }}</a></h3>
+            {% else %}
+            <h3 class="title">{{ collection.title }}</h3>
+            {% endif %}
+            <ul class="collection_docs_list">
+                {% for doc in collection.docs %}
+                    {% if doc.path contains "index.md" %}
+                    {% else %}
+                        {% if doc.url == page.url %}
+                            <li>{{ doc.title }}</li>
+                        {% else %}
+                            <li><a href="{{ doc.url | prepend: site.baseurl }}">{{ doc.title }}</a></li>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+           </ul>
+        </div>
+    {% endif %}
+{% endfor %}
+{% endcomment %}
+
+</div>
