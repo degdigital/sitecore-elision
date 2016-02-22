@@ -20,4 +20,4 @@ We're working on an example website that can be examined and easily emulated to 
 This framework and library fully embraces MVC as the technology of choice for website development. In order to keep the code base simpler, reduce the testing and regression burden, and clarify the purpose of many code files and classes, WebForms is not supported.
 
 ## Sitecore 8
-Elision is intended for use on Sitecore 8 and newer. All of the targeted Sitecore versions can be found on the [downloads page]({{ "/downloads/" | prepend: site.baseurl }}).
+Elision is intended for use on Sitecore 8 and newer. All of the targeted Sitecore versions can be found on the [downloads page]({{ "/download/" | prepend: site.baseurl }}).
