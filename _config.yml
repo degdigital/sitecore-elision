@@ -8,7 +8,7 @@ description: > # this means to ignore newlines until "baseurl:"
   Elision is a free, open-source development accelerator framework for the Sitecore CMS.
   With community support, it strives to be as stable and full-featured as other
   well-known development accelerators.
-baseurl: "/elision" # the subpath of your site, e.g. /blog/
+baseurl: "/sitecore-elision" # the subpath of your site, e.g. /blog/
 url: "http://degdigital.github.io" # the base hostname & protocol for your site
 twitter_username: PatrickDelancy
 github_username:  PatrickDelancy
