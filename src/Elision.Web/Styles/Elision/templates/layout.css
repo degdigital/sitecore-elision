@@ -1,0 +1,150 @@
+.content {
+	margin: 0 auto;
+	max-width: calc(80em + (var(--gutter-width) * 2));
+	padding: 0 var(--gutter-width);
+}
+
+@media screen and (min-width: 30em) {
+
+	.columns {
+	    @mixin clearfix;
+	    display: flex;
+	    flex-flow: wrap;
+	}
+
+	.column {
+		padding: 0 calc(var(--gutter-width) / 2);
+        width: 100%;
+
+        /* two items */
+        &:first-child:nth-last-child(2),
+        &:first-child:nth-last-child(2) ~ .column,
+        &:first-child:nth-last-child(4),
+        &:first-child:nth-last-child(4) ~ .column {
+            width: 50%;
+        }
+
+        /* three items */
+        &:first-child:nth-last-child(3),
+        &:first-child:nth-last-child(3) ~ .column {
+            width: calc(100% / 3);
+        }
+
+        &:first-child {
+            padding-left: 0;
+        }
+
+        &:last-child {
+            padding-right: 0;
+        }
+
+	}
+
+	.columns.columns-nocolumngutter {
+
+        > .column {
+            padding: 0;
+
+            > * {
+                margin-left: calc(var(--gutter-width) / 2);
+                margin-right: calc(var(--gutter-width) / 2);
+            }
+
+            &:first-child {
+
+            	* {
+					margin-left: 0;
+    			}
+
+            }
+
+            &:last-child {
+				
+				* {
+					margin-right: 0;
+    			}
+    			
+            }
+
+        }
+
+    }
+
+    .columns.columns-nochildgutter {
+
+        > .column {
+
+            > * {
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+        }
+
+    }
+
+}
+
+@media screen and (min-width: 48em) {
+
+	.column {
+
+        &:first-child:nth-last-child(4),
+        &:first-child:nth-last-child(4) ~ .column {
+            width: 25%;
+
+        }
+
+    }
+
+	.columns-wideleft,
+    .columns-wideright {
+
+		.column.column:nth-child(1),
+    	.column.column:nth-child(2) {
+			width: auto;
+	    }
+
+	}
+
+	.columns-wideleft {
+
+	    .column.column:nth-child(1) {
+	    	flex-grow: 2;
+	    }
+
+	    .column.column:nth-child(2) {
+	    	flex-grow: 1;
+	    }
+	    
+    }
+
+	.columns-wideright {
+
+	    .column.column:nth-child(1) {
+	    	flex-grow: 1;
+	    }
+
+	    .column.column:nth-child(2) {
+	    	flex-grow: 2;
+	    }
+	    
+    }
+
+}
+
+@media screen and (max-width: 47.9375em) {
+
+    .column {
+                
+        &:first-child:nth-last-child(4) + .column + .column {
+            padding-left: 0;
+        }
+
+        &:first-child:nth-last-child(4) + .column {
+            padding-right: 0;
+        }
+
+    }
+
+}

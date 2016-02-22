@@ -1,0 +1,79 @@
+----item----
+version: 1
+id: {EA7A7183-84E1-46DA-972F-ED53E11A98D1}
+database: master
+path: /sitecore/layout/Renderings/Elision/Structure/One Column
+parent: {D952DB4C-2014-418A-813A-1C7255924E40}
+name: One Column
+master: {00000000-0000-0000-0000-000000000000}
+template: {2A3E91A0-7987-44B5-AB34-35C2D9DE83B9}
+templatekey: Controller rendering
+
+----field----
+field: {E64AD073-DFCC-4D20-8C0B-FE5AA6226CD7}
+name: Controller
+key: controller
+content-length: 9
+
+Structure
+----field----
+field: {DED9E431-3604-4921-A4B3-A6EC7636A5B6}
+name: Controller Action
+key: controller action
+content-length: 9
+
+OneColumn
+----field----
+field: {13F89250-AD6B-4548-882E-118A12C18094}
+name: Parameters Template
+key: parameters template
+content-length: 38
+
+{1D5789F7-2B50-4BD1-9EA0-19195DECC84C}
+----field----
+field: {94069F66-609C-48B0-8281-521C30FB269D}
+name: Open Properties after Add
+key: open properties after add
+content-length: 0
+
+
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 3
+
+300
+----version----
+language: en
+version: 1
+revision: d02617aa-4980-4b4f-ad76-480329d5c5e3
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20150127T054214Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d02617aa-4980-4b4f-ad76-480329d5c5e3
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20150826T204618Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

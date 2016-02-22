@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5845A120-DD85-4AF1-909B-43EF3BDA3450}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Elision.Rules</RootNamespace>
+    <AssemblyName>Elision.Rules</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisIgnoreGeneratedCode>true</CodeAnalysisIgnoreGeneratedCode>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.ContentSearch">
+      <HintPath>..\..\sitecore\Sitecore.ContentSearch.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Kernel">
+      <HintPath>..\..\sitecore\Sitecore.Kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Mvc">
+      <HintPath>..\..\sitecore\Sitecore.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CompatibleRenderings\AddCompatibleRenderingAction.cs" />
+    <Compile Include="CompatibleRenderings\ClearCompatibleRenderingsAction.cs" />
+    <Compile Include="CompatibleRenderings\RemoveCompatibleRenderingAction.cs" />
+    <Compile Include="CompatibleRenderings\CurrentRenderingIsAnyOfCondition.cs" />
+    <Compile Include="CompatibleRenderings\GetCompatibleRenderingsRuleContext.cs" />
+    <Compile Include="GetContextIndex\GetContextIndexRuleContext.cs" />
+    <Compile Include="GetContextIndex\UseIndexAction.cs" />
+    <Compile Include="InsertOptions\AddInsertOptionsFromFolder.cs" />
+    <Compile Include="ItemInformation\ItemThemeIsCondition.cs" />
+    <Compile Include="PlaceholderSettings\ApplyPlaceholderSettingsAction.cs" />
+    <Compile Include="Services\EnhancedRuleContext.cs" />
+    <Compile Include="Services\EnhancedRuleList.cs" />
+    <Compile Include="GetLookupSourceItems\ReplaceTokenWithItemPathAction.cs" />
+    <Compile Include="GetLookupSourceItems\QueryContainsTokenCondition.cs" />
+    <Compile Include="GetLookupSourceItems\ForceQueryResultAction.cs" />
+    <Compile Include="GetLookupSourceItems\GetLookupsourceItemsRuleContext.cs" />
+    <Compile Include="GetLookupSourceItems\SetQueryContextItemAction.cs" />
+    <Compile Include="GetRenderingDatasource\AddDatasourceRootAction.cs" />
+    <Compile Include="GetRenderingDatasource\AddLocalDatasourceRootAction.cs" />
+    <Compile Include="GetRenderingDatasource\AddWebsiteDatasourceRootAction.cs" />
+    <Compile Include="GetRenderingDatasource\ClearDatasourceRootsAction.cs" />
+    <Compile Include="GetRenderingDatasource\AddGlobalDatasourceRootAction.cs" />
+    <Compile Include="GetRenderingDatasource\RemoveGlobalDatasourceRootAction.cs" />
+    <Compile Include="GetRenderingDatasource\HasDatasourceTemplateSetCondition.cs" />
+    <Compile Include="GetRenderingDatasource\RemoveDatasourceRootAction.cs" />
+    <Compile Include="GetRenderingDatasource\RemoveWebsiteDatasourceRootAction.cs" />
+    <Compile Include="GetRenderingDatasource\RemoveLocalDatasourceRootAction.cs" />
+    <Compile Include="GetRenderingDatasource\RenderingCondition.cs" />
+    <Compile Include="GetRenderingDatasource\DatasourceRootsNotSetCondition.cs" />
+    <Compile Include="GetRenderingDatasource\GetRenderingDatasourceRuleContext.cs" />
+    <Compile Include="GetRenderingDatasource\IsDescendentOfCondition.cs" />
+    <Compile Include="ItemInformation\ItemInheritsFromCondition.cs" />
+    <Compile Include="ItemInformation\HasLayoutDetailsForDevice.cs" />
+    <Compile Include="ItemInformation\HasLayoutDetailsForAnyDevice.cs" />
+    <Compile Include="ItemNaming\ApplyItemNamePrefix.cs" />
+    <Compile Include="ItemNaming\ApplyItemNameSuffix.cs" />
+    <Compile Include="ItemInformation\ItemNameRegexCondition.cs" />
+    <Compile Include="ItemNaming\RenameItemWithRegexReplace.cs" />
+    <Compile Include="ItemNaming\EnsureItemNameIsUnique.cs" />
+    <Compile Include="ItemNaming\RenameItemAction.cs" />
+    <Compile Include="PlaceholderSettings\AddRenderingAction.cs" />
+    <Compile Include="PlaceholderSettings\AddRenderingFolderAction.cs" />
+    <Compile Include="PlaceholderSettings\ClearRenderingsAction.cs" />
+    <Compile Include="PlaceholderSettings\AddRenderingFolderDescendantsAction.cs" />
+    <Compile Include="PlaceholderSettings\IsNestedWithinRenderingCondition.cs" />
+    <Compile Include="PlaceholderSettings\NumberOfSpecificRenderingOnPageCondition.cs" />
+    <Compile Include="PlaceholderSettings\RemoveRenderingFolderAction.cs" />
+    <Compile Include="PlaceholderSettings\RemoveRenderingAction.cs" />
+    <Compile Include="PlaceholderSettings\NumberOfRenderingsInPlaceholderCondition.cs" />
+    <Compile Include="PlaceholderSettings\PlaceholderKeyPathCondition.cs" />
+    <Compile Include="PlaceholderSettings\PlaceholderKeyCondition.cs" />
+    <Compile Include="PlaceholderSettings\PlaceholderSettingsRuleContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RenderingInformation\RenderingRuleContext.cs" />
+    <Compile Include="ReplaceRendering\MoveRenderingsToNewPlaceholderAction.cs" />
+    <Compile Include="RenderingInformation\RenderingIsAnyOfCondition.cs" />
+    <Compile Include="ReplaceRendering\ReplaceRenderingRuleContext.cs" />
+    <Compile Include="ReplaceRendering\SourceRenderingIsAnyOfCondition.cs" />
+    <Compile Include="ReplaceRendering\TargetRenderingIsAnyOfCondition.cs" />
+    <Compile Include="RuleProcessing\StopProcessingAfterThisRulesetAction.cs" />
+    <Compile Include="RuleProcessing\StopProcessingThisRulesetAction.cs" />
+    <Compile Include="RuleProcessing\StopProcessingThisRuleAction.cs" />
+    <Compile Include="RulesSettings.cs" />
+    <Compile Include="Services\RulesRunner.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Elision.Kernel\Elision.Kernel.csproj">
+      <Project>{31415c8c-1575-46a9-a146-ce58bf8969e3}</Project>
+      <Name>Elision.Kernel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

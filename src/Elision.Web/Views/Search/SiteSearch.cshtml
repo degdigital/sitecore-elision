@@ -1,0 +1,27 @@
+@using Sitecore.Globalization
+@model Elision.Web.Models.SiteSearchViewModel
+<div>
+    <form method="GET">
+        <input type="text" name="q" value="@Model.Options.Query"/>
+        <input type="submit" value="Search"/>
+    </form>
+    
+    @if (string.IsNullOrWhiteSpace(Model.Options.Query))
+    {
+        <div>@Translate.Text("Enter your search criteria above.")</div>
+    }
+    else if (Model.Results == null || !Model.Results.Any())
+    {
+        <div>@Translate.Text("There are no website pages that match the criteria you provided.")</div>
+    }
+    else
+    {
+        foreach (var result in Model.Results)
+        {
+            <div>
+                <a href="@result.Url">@result.Name</a>
+                @result.Updated.ToShortDateString()
+            </div>
+        }
+    }
+</div>

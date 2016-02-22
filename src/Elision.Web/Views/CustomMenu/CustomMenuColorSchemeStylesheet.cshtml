@@ -1,0 +1,30 @@
+@using Elision.FieldIDs
+@model Elision.Entities.RenderingParameters.Navigation.CustomMenuRenderingParameters
+@if (Model.ColorScheme == null)
+{
+    return;
+}
+@{
+    var cssSelectorRoot = ".columns--" + Model.RenderingUniqueId.ToShortID().ToString().ToLowerInvariant();
+}
+@if (!string.IsNullOrWhiteSpace(Model.ColorScheme[ColorSchemeFields.ForegroundColor]))
+{
+	<style>
+		@cssSelectorRoot,
+		@cssSelectorRoot h2,
+		@cssSelectorRoot .button {
+			color: @Model.ColorScheme[ColorSchemeFields.ForegroundColor];
+		}
+		@cssSelectorRoot .button {
+			border-color: @Model.ColorScheme[ColorSchemeFields.ForegroundColor];
+		}
+	</style>	
+}
+@if (!string.IsNullOrWhiteSpace(Model.ColorScheme[ColorSchemeFields.BackgroundColor]))
+{
+	<style>
+		@cssSelectorRoot {
+			background-color: @Model.ColorScheme[ColorSchemeFields.BackgroundColor];
+		}                   			
+	</style> 
+}				

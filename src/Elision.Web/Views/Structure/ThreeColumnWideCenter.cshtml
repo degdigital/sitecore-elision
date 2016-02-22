@@ -1,0 +1,14 @@
+@using Elision.DynamicPlaceholders
+@model Elision.Web.Models.StructureViewModel
+<div class="columns columns--three columns--wide-center columns--@Model.RenderingUniqueId.ToShortID().ToString().ToLowerInvariant() @Model.CssClass">
+    @Html.Partial("ColumnsColorSchemeStylesheet", Model)
+    <div class="column">
+        @Html.Sitecore().DynamicPlaceholder("rail")
+    </div>
+    <div class="column">
+        @Html.Sitecore().DynamicPlaceholder("main")
+    </div>
+    <div class="column">
+        @Html.Sitecore().DynamicPlaceholder("secondaryrail")
+    </div>
+</div>

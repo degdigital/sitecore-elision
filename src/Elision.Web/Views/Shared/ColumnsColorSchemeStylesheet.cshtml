@@ -1,0 +1,25 @@
+@model Elision.Web.Models.IRenderingWithColorScheme
+@{
+    var cssSelectorRoot = ".columns--" + Model.RenderingUniqueId.ToShortID().ToString().ToLowerInvariant();
+}
+@if (!string.IsNullOrWhiteSpace(Model.ForegroundColor))
+{
+	<style>
+		@cssSelectorRoot,
+		@cssSelectorRoot h2,
+		@cssSelectorRoot .button {
+			color: @Model.ForegroundColor;
+		}
+		@cssSelectorRoot .button {
+			border-color: @Model.ForegroundColor;
+		}
+	</style>	
+}
+@if (!string.IsNullOrWhiteSpace(Model.BackgroundColor))
+{
+	<style>
+		@cssSelectorRoot {
+			background-color: @Model.BackgroundColor;
+		}                   			
+	</style> 
+}				

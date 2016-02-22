@@ -1,0 +1,15 @@
+@using Elision
+@model Elision.Web.Models.ResponsiveImageViewModel
+<picture>
+    @if (Model.Profile != null && Model.Profile.ImageSizes.Any()) {
+        <!--[if IE 9]><video style="display: none;"><![endif]-->
+        foreach (var imageSize in Model.Profile.ImageSizes.Values.Where(x => x != Model.Profile.DefaultImageSize))
+        {
+            <source srcset="@Model.Item.GetMediaUrl("Image", imageSize.ImageWidth > 0 ? imageSize.ImageWidth : (int?)null)" media="(min-width: @imageSize.WindowMinWidth)">
+        }
+        <!--[if IE 9]></video><![endif]-->
+        @Html.Sitecore().Field("Image", new { width = Model.Profile.DefaultImageSize.ImageWidth, height = string.Empty, usesrcset = "True", suppressSrcParameters = "h,la", @class = Model.CssClass })
+    } else {
+        @Html.Sitecore().Field("Image", new { @class = Model.CssClass })
+    }
+</picture>

@@ -1,0 +1,4 @@
+@model Elision.Web.Models.HeadingViewModel
+@Html.Raw(string.Format("<{0} class=\"{1}\">", Model.HeadingLevel, Model.CssClass))
+@Html.Sitecore().Field("HeadingText")
+@Html.Raw(string.Format("</{0}>", Model.HeadingLevel))

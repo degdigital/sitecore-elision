@@ -1,0 +1,8 @@
+@using Elision.DynamicPlaceholders
+@model Elision.Web.Models.StructureViewModel
+<div class="columns columns--one columns--@Model.RenderingUniqueId.ToShortID().ToString().ToLowerInvariant() @Model.CssClass">
+    @Html.Partial("ColumnsColorSchemeStylesheet", Model)
+    <div class="column">
+        @Html.Sitecore().DynamicPlaceholder("main")
+    </div>
+</div>

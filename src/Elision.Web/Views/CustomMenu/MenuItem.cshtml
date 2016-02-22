@@ -1,0 +1,5 @@
+@using Elision.DynamicPlaceholders
+@model Elision.Web.Models.MenuItemViewModel
+<li class="custom-menu__list-item @Model.CssClass">
+    @Html.Sitecore().DynamicPlaceholder("menuitem")
+</li>

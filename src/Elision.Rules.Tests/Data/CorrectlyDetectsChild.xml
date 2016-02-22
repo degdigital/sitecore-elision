@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Rows>
+  <Row>
+    <parentPath>/sitecore/content/parent1</parentPath>
+    <childPath>/sitecore/content/parent1/child1a</childPath>
+    <result>True</result>
+    <message>Detects child</message>
+  </Row>
+  <Row>
+    <parentPath>/sitecore/content/parent1</parentPath>
+    <childPath>/sitecore/content/parent1/child1a/child1a2</childPath>
+    <result>True</result>
+    <message>Detects descendent</message>
+  </Row>
+</Rows>

@@ -1,0 +1,22 @@
+@model Elision.Web.Models.BreadcrumbsModel
+
+<ol class="breadcrumb-nav__list">
+@if (Model == null || Model.Crumbs.Count == 0)
+{
+    <li>There are no items to display here.</li>
+}
+else
+{
+    foreach (var crumb in Model.Crumbs)
+    {
+        if (crumb.IsActive)
+        {
+            <li class="breadcrumb-nav__list-item active">@crumb.NavigationText</li>
+        }
+        else
+        {
+            <li class="breadcrumb-nav__list-item"><a href="@crumb.Url">@crumb.NavigationText</a></li>
+        }
+    }
+}
+</ol>

@@ -1,0 +1,8 @@
+﻿@using Elision.DynamicPlaceholders
+@model Elision.Entities.RenderingParameters.Navigation.CustomMenuRenderingParameters
+<nav class="custom-menu--@Model.RenderingUniqueId.ToShortID().ToString().ToLowerInvariant() @Model.CssClass">
+    @Html.Partial("CustomMenuColorSchemeStylesheet", Model)
+	<ul class="custom-menu__list">
+		@Html.Sitecore().DynamicPlaceholder("menuitems")
+	</ul>
+</nav>

@@ -1,0 +1,38 @@
+<#@ template language="C#" 
+#><#@ output encoding="utf-8"
+#><#@ include file="Helpers.tt" 
+#><#@ assembly name="System.Core.dll" 
+#><#@ import namespace="HedgehogDevelopment.CodeGeneration.Extensions" 
+#><#@ assembly name="C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\PublicAssemblies\HedgehogDevelopment.CodeGeneration.Extensions.dll" 
+#><#@ import namespace="System" 
+#><#@ import namespace="System.Text" 
+#><#@ import namespace="System.Linq" 
+#><#@ import namespace="System.Collections.Generic" 
+#><#@ import namespace="HedgehogDevelopment.SitecoreProject.VSIP.CodeGeneration.Models" 
+#><#@ parameter name="Model" type="HedgehogDevelopment.SitecoreProject.VSIP.CodeGeneration.Models.SitecoreItem" 
+#><#@ parameter name="DefaultNamespace" type="System.String" #><#
+// we only act on Templates
+SitecoreTemplate template = Model as SitecoreTemplate;
+if (template == null)
+{
+    return "";
+}#>namespace <#= GetNamespace(DefaultNamespace, template) #>.Fields
+{
+<#
+// If the name of the template looks like an Interface, then don't generate a class definition
+#>
+    public static class <#= template.Name.AsClassName() #>FieldIDs
+    {
+        public static readonly ID TemplateId = new ID("<#= template.ID.ToString("B").ToUpper() #>");
+<# foreach(SitecoreField field in GetFieldsForTemplate(template, true)) { #>
+        public static readonly ID <#= GetPropertyName(field) #> = new ID("<#=field.ID.ToString("B").ToUpper()#>");
+<#}#>
+    }
+    public static class <#= template.Name.AsClassName() #>FieldNames
+    {
+        public const string TemplateName = "<#= template.Name #>";
+<# foreach(SitecoreField field in GetFieldsForTemplate(template, true)) { #>
+        public const string <#= GetPropertyName(field) #> = "<#=field.Name#>";
+<#}#>
+    }
+}

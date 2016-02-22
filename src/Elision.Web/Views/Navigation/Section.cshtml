@@ -1,0 +1,25 @@
+@model Elision.Web.Models.SectionNavigationViewModel
+@if (Model.RootItem == null)
+{
+    return;
+}
+@helper RenderMenu(IEnumerable<Elision.Web.Models.NavigableItem> items, int currentLevel, int maxDepth)
+{
+    var navigableItems = items as Elision.Web.Models.NavigableItem[] ?? items.ToArray();
+    if (currentLevel > maxDepth || !navigableItems.Any())
+    {
+        return;
+    }
+    <ul class="interior-nav__list">
+        @foreach (var menuItem in navigableItems)
+        {
+        <li class="interior-nav__list-item@(currentLevel == 0 ? " interior-nav__list-item--top-level" : "")">
+            <a class="interior-nav__link@(menuItem.IsActive ? " is-active" : "")" href="@menuItem.Url">@menuItem.NavigationText</a>
+            @RenderMenu(menuItem.SectionNavChildren, currentLevel + 1, maxDepth)
+        </li>
+        }
+    </ul>
+}
+<div class="interior-nav__wrapper">
+    @RenderMenu(Model.IncludeTopLevel ? new []{ Model.RootItem } : Model.RootItem.SectionNavChildren, 0, Model.Levels)
+</div>

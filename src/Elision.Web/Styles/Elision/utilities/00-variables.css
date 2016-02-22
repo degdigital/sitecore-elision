@@ -1,0 +1,18 @@
+:root {
+
+	--color-black: #000;
+	--color-white: #fff;
+
+	--font-family-primary: "Arial", "Helvetica", sans-serif;
+	--base-font-size: 1em;
+
+	--spacing-horizontal: 1em;
+	--spacing-vertical: 1em;
+	--spacing-both: 1em;
+	--gutter-width: var(--spacing-horizontal);
+
+	--border-radius: 0;
+
+	--timing: .4s;
+
+}

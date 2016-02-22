@@ -1,0 +1,22 @@
+<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/">
+  <sitecore>
+    <pipelines>
+      
+      <initialize>
+        <processor type="Elision.MongoDb.Process.InitializeMongoDb, Elision.MongoDb"
+                   patch:after="*[last()]"/>
+      </initialize>
+
+      <startMongoDb>
+        <processor type="Elision.MongoDb.Process.AbortPipelineIfMongoDbIsRunning, Elision.MongoDb">
+          <param name="connectionStringName">analytics</param>
+        </processor>
+        <processor type="Elision.MongoDb.Process.StartMongoDb, Elision.MongoDb">
+          <param name="exePath">C:\Program Files\MongoDB 2.6 Standard\bin\mongod.exe</param>
+          <param name="dbFolderPath">C:\_Application\MRNRHLDG\local\Databases\Sitecore.Analytics.mongodb</param>
+        </processor>
+      </startMongoDb>
+    
+    </pipelines>
+  </sitecore>
+</configuration>

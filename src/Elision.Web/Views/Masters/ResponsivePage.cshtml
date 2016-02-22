@@ -1,0 +1,19 @@
+﻿@using Elision
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    @Html.Sitecore().Rendering(RenderingIDs.PageMetadata.ToString(), new { Cacheable = true, Cache_VaryByData = true })
+    @Html.Sitecore().Rendering(RenderingIDs.TwitterCardMetadata.ToString(), new { Cacheable = true, Cache_VaryByData = true })
+
+    @Html.Sitecore().Rendering(RenderingIDs.HeadResources.ToString(), new { Cacheable = true, Cache_VaryByData = true })
+</head>
+<body class="@(Sitecore.Context.PageMode.IsPageEditorEditing ? "is-sc-editmode" : "")">
+    @Html.Sitecore().Rendering(RenderingIDs.BodyTopResources.ToString(), new { Cacheable = true, Cache_VaryByData = true })
+    
+    @Html.Sitecore().Placeholder("pagehead")
+    @Html.Sitecore().Placeholder("pagebody")
+    @Html.Sitecore().Placeholder("pagefoot")
+
+    @Html.Sitecore().Rendering(RenderingIDs.BodyBottomResources.ToString(), new { Cacheable = true, Cache_VaryByData = true })
+</body>
+</html>

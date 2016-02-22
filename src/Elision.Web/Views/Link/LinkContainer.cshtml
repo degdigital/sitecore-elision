@@ -1,0 +1,13 @@
+﻿@using Elision.DynamicPlaceholders
+
+@if (Sitecore.Context.PageMode.IsPageEditorEditing)
+{
+	<span>
+		@Html.Sitecore().Field("Link")
+		@Html.Sitecore().DynamicPlaceholder("linkcontents")
+	</span>		
+}
+else
+{
+	@Html.Sitecore().Field("Link", new {text = Html.Sitecore().DynamicPlaceholder("linkcontents")})
+}

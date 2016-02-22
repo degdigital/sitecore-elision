@@ -1,0 +1,446 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F3ED7317-E47D-483E-89AF-54040C11FA72}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Elision.Web</RootNamespace>
+    <AssemblyName>Elision.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisIgnoreGeneratedCode>true</CodeAnalysisIgnoreGeneratedCode>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.5\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Sitecore.Buckets, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\sitecore\Sitecore.Buckets.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Buckets.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\sitecore\Sitecore.Buckets.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Client, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\sitecore\Sitecore.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ContentSearch, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\sitecore\Sitecore.ContentSearch.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ContentSearch.Linq, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\sitecore\Sitecore.ContentSearch.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ContentSearch.Linq.Lucene, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\sitecore\Sitecore.ContentSearch.Linq.Lucene.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ContentSearch.LuceneProvider, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\sitecore\Sitecore.ContentSearch.LuceneProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ExperienceEditor, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\sitecore\Sitecore.ExperienceEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Kernel, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\sitecore\Sitecore.Kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\sitecore\Sitecore.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Mvc.ExperienceEditor, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\sitecore\Sitecore.Mvc.ExperienceEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DynamicData">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web.Entity">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.EnterpriseServices">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Config\Include\Elision\Elision.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Scripts\Elision\global.js" />
+    <Content Include="Scripts\Elision\modules\loader.js" />
+    <Content Include="Scripts\Elision\r.js" />
+    <Content Include="sitecore modules\Elision\ExperienceEditor\Commands\LaunchFieldEditor.js" />
+    <Content Include="sitecore\admin\BackupSecurity.aspx" />
+    <Content Include="sitecore\admin\ResetWorkflow.aspx" />
+    <Content Include="sitecore\shell\override\SelectRendering.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Styles\Elision\global.css" />
+    <Content Include="Views\Collections\Accordion.cshtml" />
+    <Content Include="Views\Collections\AccordionPanel.cshtml" />
+    <Content Include="Views\Collections\Carousel.cshtml" />
+    <Content Include="Views\Collections\CarouselPanel.cshtml" />
+    <Content Include="Views\Masters\ResponsivePage.cshtml" />
+    <Content Include="App_Config\Include\Elision\Elision.ErrorPages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Config\Include\Elision\Elision.RobotsTxt.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Config\Include\Elision\Elision.SitemapXml.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Config\Include\Elision\Elision.DynamicPlaceholders.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Config\Include\Elision\Elision.CascadingRenderings.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Config\Include\Elision\Elision.Publishing.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Config\Include\Elision\Elision.Search.config" />
+    <Content Include="App_Config\Include\Elision\Elision.Mvc.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Config\Include\Elision\Elision.FragmentRenderings.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Config\Include\Elision\Elision.ExperienceEditor.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Config\Include\Elision\Elision.Location.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Config\Include\Elision\Elision.MongoDb.config.example">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Content\ContentBlock.cshtml" />
+    <Content Include="Views\Content\Heading.cshtml" />
+    <Content Include="Views\Image\ResponsiveImage.cshtml" />
+    <Content Include="Views\Navigation\Breadcrumbs.cshtml" />
+    <Content Include="Views\Structure\FourColumn.cshtml" />
+    <Content Include="Views\Structure\OneColumn.cshtml" />
+    <Content Include="Views\Structure\ThreeColumn.cshtml" />
+    <Content Include="Views\Structure\ThreeColumnWideCenter.cshtml" />
+    <Content Include="Views\Structure\TwoColumn.cshtml" />
+    <Content Include="Views\Structure\TwoColumnWideLeft.cshtml" />
+    <Content Include="Views\Structure\TwoColumnWideRight.cshtml" />
+    <Content Include="Views\Structure\Header.cshtml" />
+    <Content Include="Views\Structure\Footer.cshtml" />
+    <Content Include="Views\Navigation\Primary.cshtml" />
+    <Content Include="Views\Metadata\PageFootScript.cshtml" />
+    <Content Include="Views\Navigation\Section.cshtml" />
+    <Content Include="Views\Metadata\PageMetadata.cshtml" />
+    <Content Include="Views\Masters\Fragment.cshtml" />
+    <Content Include="Views\Fragment\FragmentContainer.cshtml" />
+    <Content Include="Views\Fragment\Fragment.cshtml" />
+    <Content Include="Views\Search\SiteSearch.cshtml" />
+    <Content Include="Views\Metadata\HeadScripts.cshtml" />
+    <Content Include="Views\Metadata\BodyTopScripts.cshtml" />
+    <Content Include="Views\Metadata\BodyBottomScripts.cshtml" />
+    <Content Include="Views\CustomMenu\Container.cshtml" />
+    <Content Include="Views\CustomMenu\MenuItem.cshtml" />
+    <Content Include="Views\Link\Link.cshtml" />
+    <Content Include="Views\Link\LinkContainer.cshtml" />
+    <Content Include="Views\Image\Image.cshtml" />
+    <Content Include="sitecore\shell\Themes\Standard\Elision.zip" />
+    <Content Include="Views\Twitter\CardMeta.cshtml" />
+    <Content Include="Views\Resource\Head.cshtml" />
+    <Content Include="Views\Resource\BodyTop.cshtml" />
+    <Content Include="Views\Resource\BodyBottom.cshtml" />
+    <Content Include="Views\Shared\ColumnsColorSchemeStylesheet.cshtml" />
+    <Content Include="Views\CustomMenu\CustomMenuColorSchemeStylesheet.cshtml" />
+    <None Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Caching\SetBrowserCachingRenderingProcessor.cs" />
+    <Compile Include="Controllers\ContentController.cs" />
+    <Compile Include="Controllers\FragmentController.cs" />
+    <Compile Include="Controllers\ImageController.cs" />
+    <Compile Include="Controllers\LinkController.cs" />
+    <Compile Include="Controllers\CustomMenuController.cs" />
+    <Compile Include="Controllers\MetadataController.cs" />
+    <Compile Include="Controllers\NavigationController.cs" />
+    <Compile Include="Controllers\ResourceController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\TwitterController.cs" />
+    <Compile Include="ModelBuilders\SiteResourceModelBuilder.cs" />
+    <Compile Include="Models\HeadingViewModel.cs" />
+    <Compile Include="Models\IRendering.cs" />
+    <Compile Include="Models\IRenderingWithCssClass.cs" />
+    <Compile Include="Models\MenuItemViewModel.cs" />
+    <Compile Include="Models\SectionNavigationViewModel.cs" />
+    <Compile Include="Controllers\StructureController.cs" />
+    <Compile Include="ModelBuilders\BreadcrumbsModelBuilder.cs" />
+    <Compile Include="ModelBuilders\PageMetadataModelBuilder.cs" />
+    <Compile Include="ModelBuilders\StructureModelBuilder.cs" />
+    <Compile Include="Models\BreadcrumbsModel.cs" />
+    <Compile Include="Models\IRenderingWithColorScheme.cs" />
+    <Compile Include="Models\FragmentModel.cs" />
+    <Compile Include="Models\MainNavigationViewModel.cs" />
+    <Compile Include="Models\NavigableItem.cs" />
+    <Compile Include="Models\OgImageModel.cs" />
+    <Compile Include="Models\PageMetadataModel.cs" />
+    <Compile Include="Models\ResponsiveImageProfile.cs" />
+    <Compile Include="Models\ResponsiveImageSize.cs" />
+    <Compile Include="Models\ResponsiveImageViewModel.cs" />
+    <Compile Include="Models\SiteResourceViewModel.cs" />
+    <Compile Include="Models\SiteSearchViewModel.cs" />
+    <Compile Include="Models\StructureViewModel.cs" />
+    <Compile Include="Models\TwitterCardMetaViewModel.cs" />
+    <Compile Include="Pipelines\GetCanonicalUrl\GetCanonicalUrlArgs.cs" />
+    <Compile Include="Pipelines\GetCanonicalUrl\GetCanonicalUrlForAlias.cs" />
+    <Compile Include="Pipelines\GetCanonicalUrl\GetCanonicalUrlForItem.cs" />
+    <Compile Include="Pipelines\GetCanonicalUrl\GetLowercaseCanonical.cs" />
+    <Compile Include="Pipelines\GetCanonicalUrl\IGetCanonicalUrlProcessor.cs" />
+    <Compile Include="Pipelines\HttpRequestBegin\RobotsTxtProcessor.cs" />
+    <Compile Include="Pipelines\HttpRequestBegin\SitemapXmlProcessor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sitecore\admin\AdminJobRunner.cs" />
+    <Compile Include="sitecore\admin\BackupSecurity.aspx.cs">
+      <DependentUpon>BackupSecurity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sitecore\admin\BackupSecurity.aspx.designer.cs">
+      <DependentUpon>BackupSecurity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sitecore\admin\ResetWorkflow.aspx.cs">
+      <DependentUpon>ResetWorkflow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sitecore\admin\ResetWorkflow.aspx.designer.cs">
+      <DependentUpon>ResetWorkflow.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\web.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Elision.CascadingRenderings\Elision.CascadingRenderings.csproj">
+      <Project>{718284e4-50a4-4f19-9ab9-14c8bc395107}</Project>
+      <Name>Elision.CascadingRenderings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Elision.ContentEditor\Elision.ContentEditor.csproj">
+      <Project>{9e5fa825-dc5c-404a-931d-d1972e96dbd7}</Project>
+      <Name>Elision.ContentEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Elision.Entities\Elision.Entities.csproj">
+      <Project>{8c5c5e56-af03-4f06-b01e-7c448401e579}</Project>
+      <Name>Elision.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Elision.DynamicPlaceholders\Elision.DynamicPlaceholders.csproj">
+      <Project>{cc0a5ce9-58e6-407e-adf0-15a94d3beeb4}</Project>
+      <Name>Elision.DynamicPlaceholders</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Elision.ErrorPages\Elision.ErrorPages.csproj">
+      <Project>{1ed609bf-5330-4b3f-9391-9b246de604cf}</Project>
+      <Name>Elision.ErrorPages</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Elision.ExperienceEditor\Elision.ExperienceEditor.csproj">
+      <Project>{e67556b2-efa4-4781-82fe-6e4cd9969106}</Project>
+      <Name>Elision.ExperienceEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Elision.FieldEditor\Elision.FieldEditor.csproj">
+      <Project>{e2233743-f99a-4dba-a1fb-e7714e2357fc}</Project>
+      <Name>Elision.FieldEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Elision.Fragments\Elision.Fragments.csproj">
+      <Project>{a80cfa15-4b6b-45f6-8844-6bc85a9b0c30}</Project>
+      <Name>Elision.Fragments</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Elision.Ioc\Elision.Ioc.csproj">
+      <Project>{70c7eced-4a8a-4196-b88c-65d56a9337cb}</Project>
+      <Name>Elision.Ioc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Elision.Kernel\Elision.Kernel.csproj">
+      <Project>{31415c8c-1575-46a9-a146-ce58bf8969e3}</Project>
+      <Name>Elision.Kernel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Elision.Location\Elision.Location.csproj">
+      <Project>{7ec22282-2fd1-4a9e-a400-536a84414267}</Project>
+      <Name>Elision.Location</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Elision.MongoDb\Elision.MongoDb.csproj">
+      <Project>{a76c64c7-0c17-4575-b205-e94aadabcd8e}</Project>
+      <Name>Elision.MongoDb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Elision.Mvc\Elision.Mvc.csproj">
+      <Project>{08873c3f-b185-4649-8a8e-e28419782beb}</Project>
+      <Name>Elision.Mvc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Elision.Publishing\Elision.Publishing.csproj">
+      <Project>{e5cf0d97-47f3-4176-b7e9-e53b8e339b27}</Project>
+      <Name>Elision.Publishing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Elision.Rules\Elision.Rules.csproj">
+      <Project>{5845a120-dd85-4af1-909b-43ef3bda3450}</Project>
+      <Name>Elision.Rules</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Elision.Search\Elision.Search.csproj">
+      <Project>{e8f1afe7-8892-4286-bd8a-218bab1f149d}</Project>
+      <Name>Elision.Search</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Elision.Sitemap\Elision.Sitemap.csproj">
+      <Project>{926b7c13-c6ec-4154-952a-8331150a6599}</Project>
+      <Name>Elision.Sitemap</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Elision.SpeakFieldEditor\Elision.SpeakFieldEditor.csproj">
+      <Project>{27c598d6-c991-4702-bb79-85a5dbf8f21b}</Project>
+      <Name>Elision.SpeakFieldEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Elision.TabbedRenderingSelector\Elision.TabbedRenderingSelector.csproj">
+      <Project>{f6fd35b4-70d6-440c-b3a7-e3c45653c2f5}</Project>
+      <Name>Elision.TabbedRenderingSelector</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Elision.Themes\Elision.Themes.csproj">
+      <Project>{a105d700-5576-400e-877c-7a5e5d2565c6}</Project>
+      <Name>Elision.Themes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Elision.Workflows\Elision.Workflows.csproj">
+      <Project>{4e95f8a9-0de5-4b3c-bb7f-0fe5d62dcf1f}</Project>
+      <Name>Elision.Workflows</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>59105</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50899/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

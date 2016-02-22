@@ -1,0 +1,1 @@
+define("source/js/src/modules/loader",["exports","module"],function(a,b){"use strict";var c={init:function(){var a=Array.prototype.slice.call(document.querySelectorAll("[data-module]"));a.forEach(this.loadModule)},loadModule:function(a){var b=a.getAttribute("data-module");require([b],function(a){console.log(a)})}};b.exports=c});

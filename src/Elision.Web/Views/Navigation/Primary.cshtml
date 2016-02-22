@@ -1,0 +1,26 @@
+@model Elision.Web.Models.MainNavigationViewModel
+
+@helper RenderMenu(IEnumerable<Elision.Web.Models.NavigableItem> items, int currentLevel, int maxDepth)
+{
+    var navigableItems = items as Elision.Web.Models.NavigableItem[] ?? items.ToArray();
+    if (currentLevel > maxDepth || !navigableItems.Any())
+    {
+        return;
+    }
+    var listCssClass = (currentLevel == 0 ? Model.TopLevelListClass : Model.ChildListClass);
+    var itemCssClass = (currentLevel == 0 ? Model.TopLevelListItemClass : Model.ChildListItemClass);
+    var linkCssClass = (currentLevel == 0 ? Model.TopLevelLinkClass : Model.ChildLinkClass);
+    
+    <ul@(string.IsNullOrWhiteSpace(listCssClass) ? "" : string.Format(" class={0}", listCssClass))>
+        @foreach (var menuItem in navigableItems)
+        {
+            <li@(string.IsNullOrWhiteSpace(itemCssClass) ? "" : string.Format(" class={0}", itemCssClass))>
+                <a href="@menuItem.Url" class="@linkCssClass @menuItem.CssClass" target="@menuItem.Target">@menuItem.NavigationText</a>
+                @RenderMenu(menuItem.PrimaryNavChildren, currentLevel + 1, maxDepth)
+            </li>
+        }
+    </ul>
+}
+<nav role="navigation"@(string.IsNullOrWhiteSpace(Model.CssClass) ? "" : string.Format(" class={0}", Model.CssClass))>
+    @RenderMenu(Model.MenuItems, 0, Model.Levels)
+</nav>

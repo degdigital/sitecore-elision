@@ -1,0 +1,34 @@
+@define-mixin clearfix {
+	&:after {
+		clear: both;
+		content: "";
+		display: table;
+		float: none;
+	}
+}
+
+@define-mixin list-bare {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+@define-mixin list-horizontal {
+	@mixin clearfix;
+	li {
+		float: left;
+	}
+}
+
+@define-mixin list-inline {
+	@mixin clearfix;
+	li {
+		display: inline;
+	}
+}
+
+@define-mixin hide-text {
+	overflow: hidden;
+	text-indent: 100%;
+	white-space: nowrap;
+}

@@ -1,0 +1,21 @@
+﻿@using Elision
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	@Html.Sitecore().Rendering(RenderingIDs.PageMetadata.ToString(), new { Cacheable = true, Cache_VaryByData = true })
+	@Html.Sitecore().Rendering(RenderingIDs.TwitterCardMetadata.ToString(), new { Cacheable = true, Cache_VaryByData = true })
+
+	@Html.Sitecore().Rendering(RenderingIDs.HeadResources.ToString(), new { Cacheable = true, Cache_VaryByData = true })
+</head>
+<body>
+	@Html.Sitecore().Rendering(RenderingIDs.BodyTopResources.ToString(), new { Cacheable = true, Cache_VaryByData = true })
+	<div>
+		<h1>Content Fragment</h1>
+		<br style="clear: left;" />
+	</div>
+
+	@Html.Sitecore().Placeholder("fragmentcontainer")
+	
+	@Html.Sitecore().Rendering(RenderingIDs.BodyBottomResources.ToString(), new { Cacheable = true, Cache_VaryByData = true })
+</body>
+</html>
