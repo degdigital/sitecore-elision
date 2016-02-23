@@ -45,7 +45,7 @@
     <PackageReadme>
     </PackageReadme>
     <PackageVersion>8.1.0</PackageVersion>
-    <SitecoreAssemblyPath>..\..\sitecore</SitecoreAssemblyPath>
+    <SitecoreAssemblyPath>..\packages\Sitecore81Deploy.8.1.151207\lib</SitecoreAssemblyPath>
     <InstallSitecoreConnector>False</InstallSitecoreConnector>
     <DisableFileDeployment>True</DisableFileDeployment>
     <EnableValidations>True</EnableValidations>
@@ -89,7 +89,7 @@
     <PackageReadme>
     </PackageReadme>
     <PackageVersion>1.0</PackageVersion>
-    <SitecoreAssemblyPath>..\packages\Sitecore72.7.2.150408.150413\lib</SitecoreAssemblyPath>
+    <SitecoreAssemblyPath>..\packages\Sitecore81Deploy.8.1.151207\lib</SitecoreAssemblyPath>
     <InstallSitecoreConnector>False</InstallSitecoreConnector>
     <DisableFileDeployment>True</DisableFileDeployment>
     <OutputPath>..\..\temp\Debug\</OutputPath>

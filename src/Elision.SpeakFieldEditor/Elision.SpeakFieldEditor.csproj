@@ -33,14 +33,45 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Sitecore.ExperienceEditor">
-      <HintPath>..\..\sitecore\Sitecore.ExperienceEditor.dll</HintPath>
+    <Reference Include="Sitecore.Buckets, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore81Client.8.1.151207\lib\Sitecore.Buckets.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Sitecore.ExperienceEditor.Speak">
-      <HintPath>..\..\sitecore\Sitecore.ExperienceEditor.Speak.dll</HintPath>
+    <Reference Include="Sitecore.Buckets.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore81Client.8.1.151207\lib\Sitecore.Buckets.Client.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Sitecore.Kernel">
-      <HintPath>..\..\sitecore\Sitecore.Kernel.dll</HintPath>
+    <Reference Include="Sitecore.Client, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore81Client.8.1.151207\lib\Sitecore.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.ExperienceEditor, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore81Client.8.1.151207\lib\Sitecore.ExperienceEditor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.ExperienceEditor.Speak, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore81Client.8.1.151207\lib\Sitecore.ExperienceEditor.Speak.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.ExperienceEditor.Speak.Ribbon, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore81Client.8.1.151207\lib\Sitecore.ExperienceEditor.Speak.Ribbon.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.ExperienceExplorer.Business, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore81Client.8.1.151207\lib\Sitecore.ExperienceExplorer.Business.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.ExperienceExplorer.Web, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore81Client.8.1.151207\lib\Sitecore.ExperienceExplorer.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.Kernel, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore81Kernel.8.1.151207\lib\Sitecore.Kernel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.Mvc.ExperienceEditor, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore81Client.8.1.151207\lib\Sitecore.Mvc.ExperienceEditor.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -55,6 +86,9 @@
   <ItemGroup>
     <Compile Include="GenerateFieldEditorUrl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

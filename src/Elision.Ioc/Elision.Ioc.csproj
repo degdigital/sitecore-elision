@@ -37,12 +37,25 @@
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Sitecore.Kernel">
-      <HintPath>..\..\sitecore\Sitecore.Kernel.dll</HintPath>
+    <Reference Include="Sitecore.Kernel, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore81Kernel.8.1.151207\lib\Sitecore.Kernel.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\sitecore\Sitecore.Mvc.dll</HintPath>
+      <HintPath>..\packages\Sitecore81Mvc.8.1.151207\lib\Sitecore.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.Mvc.Analytics, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore81Mvc.8.1.151207\lib\Sitecore.Mvc.Analytics.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.Mvc.ExperienceEditor, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore81Mvc.8.1.151207\lib\Sitecore.Mvc.ExperienceEditor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.Speak.Mvc, Version=2.0.811.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore81Mvc.8.1.151207\lib\Sitecore.Speak.Mvc.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />

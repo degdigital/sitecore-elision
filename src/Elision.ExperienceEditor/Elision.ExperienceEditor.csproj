@@ -38,21 +38,60 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.5\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.Buckets, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore81Client.8.1.151207\lib\Sitecore.Buckets.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.Buckets.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore81Client.8.1.151207\lib\Sitecore.Buckets.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.Client, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore81Client.8.1.151207\lib\Sitecore.Client.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.ExperienceEditor, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\sitecore\Sitecore.ExperienceEditor.dll</HintPath>
+      <HintPath>..\packages\Sitecore81Client.8.1.151207\lib\Sitecore.ExperienceEditor.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Sitecore.Kernel">
-      <HintPath>..\..\sitecore\Sitecore.Kernel.dll</HintPath>
+    <Reference Include="Sitecore.ExperienceEditor.Speak, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore81Client.8.1.151207\lib\Sitecore.ExperienceEditor.Speak.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Sitecore.Mvc">
-      <HintPath>..\..\sitecore\Sitecore.Mvc.dll</HintPath>
+    <Reference Include="Sitecore.ExperienceEditor.Speak.Ribbon, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore81Client.8.1.151207\lib\Sitecore.ExperienceEditor.Speak.Ribbon.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Sitecore.Mvc.ExperienceEditor">
-      <HintPath>..\..\sitecore\Sitecore.Mvc.ExperienceEditor.dll</HintPath>
+    <Reference Include="Sitecore.ExperienceExplorer.Business, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore81Client.8.1.151207\lib\Sitecore.ExperienceExplorer.Business.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.ExperienceExplorer.Web, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore81Client.8.1.151207\lib\Sitecore.ExperienceExplorer.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.Kernel, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore81Kernel.8.1.151207\lib\Sitecore.Kernel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore81Mvc.8.1.151207\lib\Sitecore.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.Mvc.Analytics, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore81Mvc.8.1.151207\lib\Sitecore.Mvc.Analytics.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.Mvc.ExperienceEditor, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore81Mvc.8.1.151207\lib\Sitecore.Mvc.ExperienceEditor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.Speak.Mvc, Version=2.0.811.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore81Mvc.8.1.151207\lib\Sitecore.Speak.Mvc.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -100,6 +139,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
