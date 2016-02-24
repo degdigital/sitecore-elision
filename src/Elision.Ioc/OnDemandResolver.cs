@@ -55,7 +55,11 @@ namespace Elision.Ioc
                     }
 
                     type = impl[0];
-                    InterfaceMap.Add(fullName, type);
+                    lock (InterfaceMap)
+                    {
+                        if (!InterfaceMap.ContainsKey(fullName))
+                            InterfaceMap.Add(fullName, type);
+                    }
                 }
             }
 
@@ -91,7 +95,11 @@ namespace Elision.Ioc
             if (!CanBeImplementationOfType(implementationType, interfaceType))
                 throw new InvalidOperationException("Cannot register mapping for implementation type that does not inherit from the interface type.");
 
-            InterfaceMap.Add(fullName, implementationType);
+            lock (InterfaceMap)
+            {
+                if (!InterfaceMap.ContainsKey(fullName))
+                    InterfaceMap.Add(fullName, implementationType);
+            }
         }
 
         protected virtual Type[] GetConcreteTypesFromInterface(Type interfaceType)
@@ -99,19 +107,24 @@ namespace Elision.Ioc
             if (KnownTypes == null)
             {
                 var assemblies = AppDomain.CurrentDomain
-                                          .GetAssemblies()
-                                          .Where(x => !x.FullName.StartsWith("System.")
-                                                      && !x.FullName.StartsWith("Microsoft.")
-                                                      && !x.FullName.StartsWith("Sitecore."));
+                                        .GetAssemblies()
+                                        .Where(x => !x.FullName.StartsWith("System.")
+                                                    && !x.FullName.StartsWith("Microsoft.")
+                                                    && !x.FullName.StartsWith("Sitecore."));
                 var types = new List<Type>();
                 foreach (var assembly in assemblies)
                 {
                     try
                     {
                         types.AddRange(assembly.GetExportedTypes());
-                    } catch { }
+                    }
+                    catch { }
                 }
-                KnownTypes = types.ToArray();
+                lock (KnownTypes)
+                {
+                    if (KnownTypes == null)
+                        KnownTypes = types.ToArray();
+                }
             }
             return KnownTypes
                 .Where(x => CanBeImplementationOfType(x, interfaceType))
