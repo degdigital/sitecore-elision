@@ -120,11 +120,8 @@ namespace Elision.Ioc
                     }
                     catch { }
                 }
-                lock (KnownTypes)
-                {
-                    if (KnownTypes == null)
-                        KnownTypes = types.ToArray();
-                }
+                if (KnownTypes == null)
+                    KnownTypes = types.ToArray();
             }
             return KnownTypes
                 .Where(x => CanBeImplementationOfType(x, interfaceType))
