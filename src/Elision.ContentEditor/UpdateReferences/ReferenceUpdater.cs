@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -10,6 +9,7 @@ using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
 using Sitecore.SecurityModel;
 using Sitecore.Xml.Patch;
+using Elision.Diagnostics;
 
 namespace Elision.ContentEditor.UpdateReferences
 {
@@ -28,8 +28,7 @@ namespace Elision.ContentEditor.UpdateReferences
 
         public int Count = 0;
 
-        public string TimeTaken { get; set; }
-        private Func<Field, bool> FieldFilter { get; set; }
+        private Func<Field, bool> ShouldProcessField { get; set; }
 
         public ReferenceUpdater(Item start, Dictionary<string, string> roots, bool deep = false)
         {
@@ -49,32 +48,20 @@ namespace Elision.ContentEditor.UpdateReferences
 
         public void Start()
         {
-            var stopWatch = new Stopwatch();
-
-            stopWatch.Start();
-
-            if (FieldFilter == null)
+            using (var trace = new TraceOperation("Update item references"))
             {
-                //Default if not supplied from outside.
-                FieldFilter = ExcludeStandardSitecoreFieldsExceptLayout;
+                if (ShouldProcessField == null)
+                {
+                    //Default if not supplied from outside.
+                    ShouldProcessField = ExcludeStandardSitecoreFieldsExceptLayout;
+                }
+
+                if (_startItem != null && _roots != null)
+                {
+                    _masterDb = _startItem.Database;
+                    FixReferences(_startItem, _roots, _deep);
+                }
             }
-
-            if (_startItem != null && _roots != null)
-            {
-                _masterDb = _startItem.Database;
-                FixReferences(_startItem, _roots, _deep);
-            }
-
-            stopWatch.Stop();
-
-            // Get the elapsed time as a TimeSpan value.
-            var ts = stopWatch.Elapsed;
-            // Format and display the TimeSpan value. 
-            var elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
-                                            ts.Hours, ts.Minutes, ts.Seconds,
-                                            ts.Milliseconds / 10);
-
-            TimeTaken = elapsedTime;
         }
 
         private void FixReferences(Item start, Dictionary<string, string> roots, bool deep = false)
@@ -184,8 +171,8 @@ namespace Elision.ContentEditor.UpdateReferences
             if (initialValue.Equals(value.ToString()))
                 return;
 
-            using (new SecurityDisabler())
-            using (new EditContext(field.Item))
+            using (new Sitecore.Data.Events.EventDisabler())
+            using (new EditContext(field.Item, SecurityCheck.Disable))
             {
                 field.Value = value.ToString();
             }
@@ -242,7 +229,7 @@ namespace Elision.ContentEditor.UpdateReferences
         private IEnumerable<Field> GetFieldsToProcess(Item item)
         {
             item.Fields.ReadAll();
-            return item.Fields.Where(FieldFilter).ToArray();
+            return item.Fields.Where(ShouldProcessField).ToArray();
         }
 
         private List<string> GetKeys(string fieldValue)
