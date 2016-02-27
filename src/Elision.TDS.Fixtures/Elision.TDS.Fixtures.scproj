@@ -88,7 +88,7 @@
     <PackagePublisher>DEG</PackagePublisher>
     <PackageReadme>
     </PackageReadme>
-    <PackageVersion>1.0</PackageVersion>
+    <PackageVersion>8.1.0</PackageVersion>
     <SitecoreAssemblyPath>..\packages\Sitecore81Deploy.8.1.151207\lib</SitecoreAssemblyPath>
     <InstallSitecoreConnector>False</InstallSitecoreConnector>
     <DisableFileDeployment>True</DisableFileDeployment>
