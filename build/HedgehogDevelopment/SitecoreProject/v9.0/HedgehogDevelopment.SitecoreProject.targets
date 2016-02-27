@@ -1,45 +1,45 @@
 ﻿<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <UsingTask AssemblyFile="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.Tasks.dll"
+  <UsingTask AssemblyFile="$(MSBuildThisFileDirectory)HedgehogDevelopment.SitecoreProject.Tasks.dll"
 			   TaskName="HedgehogDevelopment.SitecoreProject.Tasks.DeploySitecoreConnector"/>
-  <UsingTask AssemblyFile="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.Tasks.dll"
+  <UsingTask AssemblyFile="$(MSBuildThisFileDirectory)HedgehogDevelopment.SitecoreProject.Tasks.dll"
 			   TaskName="HedgehogDevelopment.SitecoreProject.Tasks.DeploySitecoreItems"/>
-  <UsingTask AssemblyFile="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.Tasks.dll"
+  <UsingTask AssemblyFile="$(MSBuildThisFileDirectory)HedgehogDevelopment.SitecoreProject.Tasks.dll"
 			   TaskName="HedgehogDevelopment.SitecoreProject.Tasks.RemoveSitecoreConnector"/>
-  <UsingTask AssemblyFile="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.Tasks.dll"
+  <UsingTask AssemblyFile="$(MSBuildThisFileDirectory)HedgehogDevelopment.SitecoreProject.Tasks.dll"
 			   TaskName="HedgehogDevelopment.SitecoreProject.Tasks.GetProjectContentFiles"/>
-  <UsingTask AssemblyFile="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.Tasks.dll"
+  <UsingTask AssemblyFile="$(MSBuildThisFileDirectory)HedgehogDevelopment.SitecoreProject.Tasks.dll"
 			   TaskName="HedgehogDevelopment.SitecoreProject.Tasks.ResetSitecoreItemCollection"/>
-  <UsingTask AssemblyFile="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.Tasks.dll"
+  <UsingTask AssemblyFile="$(MSBuildThisFileDirectory)HedgehogDevelopment.SitecoreProject.Tasks.dll"
 			   TaskName="HedgehogDevelopment.SitecoreProject.Tasks.CollectSitecoreItems"/>
-  <UsingTask AssemblyFile="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.Tasks.dll"
+  <UsingTask AssemblyFile="$(MSBuildThisFileDirectory)HedgehogDevelopment.SitecoreProject.Tasks.dll"
 			   TaskName="HedgehogDevelopment.SitecoreProject.Tasks.RemoveSitecoreItemsNotInProject"/>
-  <UsingTask AssemblyFile="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.Tasks.dll"
+  <UsingTask AssemblyFile="$(MSBuildThisFileDirectory)HedgehogDevelopment.SitecoreProject.Tasks.dll"
 			   TaskName="HedgehogDevelopment.SitecoreProject.Tasks.GeneratePackage"/>
-  <UsingTask AssemblyFile="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.Tasks.dll"
+  <UsingTask AssemblyFile="$(MSBuildThisFileDirectory)HedgehogDevelopment.SitecoreProject.Tasks.dll"
 			   TaskName="HedgehogDevelopment.SitecoreProject.Tasks.ValidateProjectOutDir"/>
-  <UsingTask AssemblyFile="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.Tasks.dll"
+  <UsingTask AssemblyFile="$(MSBuildThisFileDirectory)HedgehogDevelopment.SitecoreProject.Tasks.dll"
        TaskName="HedgehogDevelopment.SitecoreProject.Tasks.ClearSitecoreCache"/>
-  <UsingTask AssemblyFile="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.Tasks.dll"
+  <UsingTask AssemblyFile="$(MSBuildThisFileDirectory)HedgehogDevelopment.SitecoreProject.Tasks.dll"
        TaskName="HedgehogDevelopment.SitecoreProject.Tasks.GetProjectName"/>
-  <UsingTask AssemblyFile="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.Tasks.dll"
+  <UsingTask AssemblyFile="$(MSBuildThisFileDirectory)HedgehogDevelopment.SitecoreProject.Tasks.dll"
        TaskName="HedgehogDevelopment.SitecoreProject.Tasks.BuildReplacementTargetPath"/>
-  <UsingTask AssemblyFile="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.Tasks.dll"
+  <UsingTask AssemblyFile="$(MSBuildThisFileDirectory)HedgehogDevelopment.SitecoreProject.Tasks.dll"
        TaskName="HedgehogDevelopment.SitecoreProject.Tasks.RemoveObsoleteFiles"/>
-  <UsingTask AssemblyFile="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.Tasks.dll"
+  <UsingTask AssemblyFile="$(MSBuildThisFileDirectory)HedgehogDevelopment.SitecoreProject.Tasks.dll"
        TaskName="HedgehogDevelopment.SitecoreProject.Tasks.GetFilesToTransform"/>
-  <UsingTask AssemblyFile="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.Tasks.dll"
+  <UsingTask AssemblyFile="$(MSBuildThisFileDirectory)HedgehogDevelopment.SitecoreProject.Tasks.dll"
        TaskName="HedgehogDevelopment.SitecoreProject.Tasks.GetBuildRuntimeVersion"/>
-  <UsingTask AssemblyFile="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.Tasks.dll"
+  <UsingTask AssemblyFile="$(MSBuildThisFileDirectory)HedgehogDevelopment.SitecoreProject.Tasks.dll"
          TaskName="HedgehogDevelopment.SitecoreProject.Tasks.AnalyzeProject"/>
-  <UsingTask AssemblyFile="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.Tasks.dll"
+  <UsingTask AssemblyFile="$(MSBuildThisFileDirectory)HedgehogDevelopment.SitecoreProject.Tasks.dll"
          TaskName="HedgehogDevelopment.SitecoreProject.Tasks.BuildNuSpecFile"/>
-  <UsingTask AssemblyFile="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.Tasks.dll"
+  <UsingTask AssemblyFile="$(MSBuildThisFileDirectory)HedgehogDevelopment.SitecoreProject.Tasks.dll"
 	    TaskName="HedgehogDevelopment.SitecoreProject.Tasks.AnalyzeProject"/>
-  <UsingTask AssemblyFile="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.Tasks.dll"
+  <UsingTask AssemblyFile="$(MSBuildThisFileDirectory)HedgehogDevelopment.SitecoreProject.Tasks.dll"
 	    TaskName="HedgehogDevelopment.SitecoreProject.Tasks.MakeAbsolutePath"/>
-  <UsingTask AssemblyFile="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.Tasks.dll"
+  <UsingTask AssemblyFile="$(MSBuildThisFileDirectory)HedgehogDevelopment.SitecoreProject.Tasks.dll"
     TaskName="HedgehogDevelopment.SitecoreProject.Tasks.DisplayAssemblyIdentity"/>
-  <UsingTask AssemblyFile="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.Tasks.dll"
+  <UsingTask AssemblyFile="$(MSBuildThisFileDirectory)HedgehogDevelopment.SitecoreProject.Tasks.dll"
     TaskName="HedgehogDevelopment.SitecoreProject.Tasks.DeploySitecoreRoles"/>
   <UsingTask AssemblyFile="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v14.0\Web\Microsoft.Web.Publishing.Tasks.dll"
        TaskName="Microsoft.Web.Publishing.Tasks.TransformXml" Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v14.0\Web\Microsoft.Web.Publishing.Tasks.dll')"/>
@@ -538,9 +538,9 @@
   <Target Name="InstallSitecoreConnectorFiles">
     <Delete Files="$(SitecoreDeployFolder)\_DEV\TfsService.asmx" Condition="Exists('$(SitecoreDeployFolder)\_DEV\TfsService.asmx')"/>
 
-    <Copy SourceFiles="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\TdsService.asmx"
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)TdsService.asmx"
 			  DestinationFiles="$(SitecoreDeployFolder)\_DEV\TdsService.asmx"/>
-    <Copy SourceFiles="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\bin\HedgehogDevelopment.SitecoreProject.Service.dll"
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)bin\HedgehogDevelopment.SitecoreProject.Service.dll"
 			  DestinationFiles="$(SitecoreDeployFolder)\bin\HedgehogDevelopment.SitecoreProject.Service.dll"/>
   </Target>
 
