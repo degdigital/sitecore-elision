@@ -14,6 +14,9 @@ namespace Elision.CascadingRenderings
             if (!"rendering".Equals(args.ChromeType, StringComparison.OrdinalIgnoreCase))
                 return;
 
+            if (!Sitecore.Configuration.Settings.GetBoolSetting("Elision.CascadingRenderings.Enabled", false))
+                return;
+
             var renderingReference = args.CustomData["renderingReference"] as Sitecore.Layouts.RenderingReference;
             if (renderingReference == null || renderingReference.Settings == null)
                 return;

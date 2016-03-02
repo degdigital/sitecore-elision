@@ -15,6 +15,9 @@ namespace Elision.CascadingRenderings
         {
             if (args.Result == null) return;
 
+            if (!Sitecore.Configuration.Settings.GetBoolSetting("Elision.CascadingRenderings.Enabled", false))
+                return;
+
             var item = Sitecore.Mvc.Presentation.PageContext.Current.Item;
             var device = Sitecore.Mvc.Presentation.PageContext.Current.Device;
             if (item == null || item.Parent == null || device == null) return;

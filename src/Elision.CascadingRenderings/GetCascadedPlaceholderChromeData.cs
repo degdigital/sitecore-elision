@@ -17,6 +17,9 @@ namespace Elision.CascadingRenderings
             if (args.Item == null)
                 return;
 
+            if (!Sitecore.Configuration.Settings.GetBoolSetting("Elision.CascadingRenderings.Enabled", false))
+                return;
+
             var cascadable = true;
             var cascaded = false;
 

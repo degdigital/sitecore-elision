@@ -287,25 +287,25 @@
     <Content Include="Views\Collections\Carousel.cshtml" />
     <Content Include="Views\Collections\CarouselPanel.cshtml" />
     <Content Include="Views\Masters\ResponsivePage.cshtml" />
-    <Content Include="App_Config\Include\Elision\Elision.ErrorPages.config">
+    <None Include="App_Config\Include\Elision\Elision.ErrorPages.config.example">
       <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Config\Include\Elision\Elision.RobotsTxt.config">
+    </None>
+    <None Include="App_Config\Include\Elision\Elision.RobotsTxt.config.disabled">
       <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Config\Include\Elision\Elision.SitemapXml.config">
+    </None>
+    <None Include="App_Config\Include\Elision\Elision.SitemapXml.config.disabled">
       <SubType>Designer</SubType>
-    </Content>
+    </None>
     <Content Include="App_Config\Include\Elision\Elision.DynamicPlaceholders.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="App_Config\Include\Elision\Elision.CascadingRenderings.config">
+    <None Include="App_Config\Include\Elision\Elision.CascadingRenderings.config.disabled">
       <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Config\Include\Elision\Elision.Publishing.config">
+    </None>
+    <None Include="App_Config\Include\Elision\Elision.Publishing.config.disabled">
       <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Config\Include\Elision\Elision.Search.config" />
+    </None>
+    <None Include="App_Config\Include\Elision\Elision.Search.config.example" />
     <Content Include="App_Config\Include\Elision\Elision.Mvc.config">
       <SubType>Designer</SubType>
     </Content>
