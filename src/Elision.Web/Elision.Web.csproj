@@ -287,6 +287,9 @@
     <Content Include="Views\Collections\Carousel.cshtml" />
     <Content Include="Views\Collections\CarouselPanel.cshtml" />
     <Content Include="Views\Masters\ResponsivePage.cshtml" />
+    <Content Include="App_Config\Include\Elision\Elision.UpdateReferences.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="App_Config\Include\Elision\Elision.ErrorPages.config.example">
       <SubType>Designer</SubType>
     </None>
