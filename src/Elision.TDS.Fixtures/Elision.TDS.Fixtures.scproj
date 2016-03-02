@@ -42,39 +42,13 @@
     <AddDateTimeToPackageName>False</AddDateTimeToPackageName>
     <PackageAuthor>Patrick Delancy</PackageAuthor>
     <PackagePublisher>DEG</PackagePublisher>
-    <PackageReadme>
-    </PackageReadme>
+    <PackageReadme></PackageReadme>
     <PackageVersion>8.1.0</PackageVersion>
     <SitecoreAssemblyPath>..\packages\Sitecore81Deploy.8.1.151207\lib</SitecoreAssemblyPath>
     <InstallSitecoreConnector>False</InstallSitecoreConnector>
     <DisableFileDeployment>True</DisableFileDeployment>
     <EnableValidations>True</EnableValidations>
     <ValidationSettingsFilePath>.\Elision.TDS.Fixtures_Release.xml</ValidationSettingsFilePath>
-    <NuGetGenerateNuGetPackage>False</NuGetGenerateNuGetPackage>
-    <NuGetRequireLicenseAcceptance>False</NuGetRequireLicenseAcceptance>
-    <NuGetSummary>
-    </NuGetSummary>
-    <NuGetExePath>..\.nuget</NuGetExePath>
-    <NuGetDescription>Elision is a development accelerator for Sitecore projects.</NuGetDescription>
-    <NuGetTitle>Elision for Sitecore</NuGetTitle>
-    <NuGetVersion>8.1.0.0</NuGetVersion>
-    <NuGetPackageId>Elision</NuGetPackageId>
-    <NuGetAuthors>PatrickDelancy</NuGetAuthors>
-    <NuGetOwners>PatrickDelancy</NuGetOwners>
-    <NuGetCopyright>
-    </NuGetCopyright>
-    <NuGetLicenseUrl>
-    </NuGetLicenseUrl>
-    <NuGetIconUrl>
-    </NuGetIconUrl>
-    <NuGetProjectUrl>
-    </NuGetProjectUrl>
-    <NuGetTags>
-    </NuGetTags>
-    <NuGetReleaseNotes>
-    </NuGetReleaseNotes>
-    <NuGetLanguage>
-    </NuGetLanguage>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>false</DebugSymbols>
@@ -2160,5 +2134,5 @@
       <ProjectId>{e08c0f93-24a2-47f7-88e9-817ee370f40a}</ProjectId>
     </BundledProject>
   </ItemGroup>
-  <Import Project="$(MSBuildProjectDirectory)\..\..\build\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets" />
+  <Import Project="$(ProjectDir)..\.hedgehogtds\HedgehogDevelopment.SitecoreProject.targets" />
 </Project>

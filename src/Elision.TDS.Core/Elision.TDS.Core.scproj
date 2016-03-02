@@ -6,58 +6,50 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>e08c0f93-24a2-47f7-88e9-817ee370f40a</ProjectGuid>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
-    <SourceWebPhysicalPath>
-    </SourceWebPhysicalPath>
-    <SourceWebProject>
-    </SourceWebProject>
-    <SourceWebVirtualPath>
-    </SourceWebVirtualPath>
+    <SourceWebPhysicalPath>..\Elision.Web</SourceWebPhysicalPath>
+    <SourceWebProject>{f3ed7317-e47d-483e-89af-54040c11fa72}|Elision.Web\Elision.Web.csproj</SourceWebProject>
+    <SourceWebVirtualPath>/Elision.Web.csproj</SourceWebVirtualPath>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <EnableUpdateable>true</EnableUpdateable>
     <UseMerge>true</UseMerge>
-    <SingleAssemblyName>TDS.Core</SingleAssemblyName>
+    <SingleAssemblyName>Elision.Core</SingleAssemblyName>
     <UseWebConfigReplacement>false</UseWebConfigReplacement>
     <DeleteAppCodeCompiledFiles>true</DeleteAppCodeCompiledFiles>
     <LegacyFileReplacement>false</LegacyFileReplacement>
-    <AssemblyName>TDS.Core</AssemblyName>
-    <Name>TDS.Core</Name>
-    <RootNamespace>TDS.Core</RootNamespace>
+    <AssemblyName>Elision.Core</AssemblyName>
+    <Name>Elision.Core</Name>
+    <RootNamespace>Elision.Core</RootNamespace>
+    <SitecoreDatabase>core</SitecoreDatabase>
     <EnableCodeGeneration>false</EnableCodeGeneration>
     <ManageRoles>False</ManageRoles>
-    <SitecoreDatabase>core</SitecoreDatabase>
     <AssemblyStatus>Exclude</AssemblyStatus>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DebugSymbols>false</DebugSymbols>
     <OutputPath>..\..\temp\Release\</OutputPath>
-    <RecursiveDeployAction>Ignore</RecursiveDeployAction>
-    <PackageName>
-    </PackageName>
+    <RecursiveDeployAction>SitecoreRecycle</RecursiveDeployAction>
+    <PackageName></PackageName>
     <GeneratePackage>False</GeneratePackage>
     <SeperateFilesAndItems>False</SeperateFilesAndItems>
     <PackageExcludeCode>False</PackageExcludeCode>
     <AddDateTimeToPackageName>False</AddDateTimeToPackageName>
-    <PackageAuthor>
-    </PackageAuthor>
-    <PackagePublisher>
-    </PackagePublisher>
-    <PackageReadme>
-    </PackageReadme>
-    <PackageVersion>
-    </PackageVersion>
-    <SitecoreAssemblyPath>
-    </SitecoreAssemblyPath>
+    <PackageAuthor></PackageAuthor>
+    <PackagePublisher></PackagePublisher>
+    <PackageReadme></PackageReadme>
+    <PackageVersion></PackageVersion>
+    <SitecoreAssemblyPath></SitecoreAssemblyPath>
     <InstallSitecoreConnector>False</InstallSitecoreConnector>
-    <DisableFileDeployment>False</DisableFileDeployment>
+    <DisableFileDeployment>True</DisableFileDeployment>
     <EnableValidations>True</EnableValidations>
     <ValidationSettingsFilePath>.\Elision.TDS.Core_Release.xml</ValidationSettingsFilePath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>false</DebugSymbols>
     <RecursiveDeployAction>SitecoreRecycle</RecursiveDeployAction>
-    <OutputPath>..\..\temp\Debug\</OutputPath>
+
     <InstallSitecoreConnector>False</InstallSitecoreConnector>
     <DisableFileDeployment>True</DisableFileDeployment>
+    <OutputPath>..\..\temp\Debug\</OutputPath>
     <SitecoreWebUrl>
     </SitecoreWebUrl>
     <SitecoreDeployFolder>
@@ -177,5 +169,5 @@
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
     </SitecoreItem>
   </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets" />
+  <Import Project="$(ProjectDir)..\.hedgehogtds\HedgehogDevelopment.SitecoreProject.targets" />
 </Project>
