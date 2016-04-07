@@ -290,25 +290,25 @@
     <Content Include="App_Config\Include\Elision\Elision.UpdateReferences.config">
       <SubType>Designer</SubType>
     </Content>
-    <None Include="App_Config\Include\Elision\Elision.ErrorPages.config.example">
+    <Content Include="App_Config\Include\Elision\Elision.ErrorPages.config.example">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="App_Config\Include\Elision\Elision.RobotsTxt.config.disabled">
+    </Content>
+    <Content Include="App_Config\Include\Elision\Elision.RobotsTxt.config.disabled">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="App_Config\Include\Elision\Elision.SitemapXml.config.disabled">
+    </Content>
+    <Content Include="App_Config\Include\Elision\Elision.SitemapXml.config.disabled">
       <SubType>Designer</SubType>
-    </None>
+    </Content>
     <Content Include="App_Config\Include\Elision\Elision.DynamicPlaceholders.config">
       <SubType>Designer</SubType>
     </Content>
-    <None Include="App_Config\Include\Elision\Elision.CascadingRenderings.config.disabled">
+    <Content Include="App_Config\Include\Elision\Elision.CascadingRenderings.config.disabled">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="App_Config\Include\Elision\Elision.Publishing.config.disabled">
+    </Content>
+    <Content Include="App_Config\Include\Elision\Elision.Publishing.config.disabled">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="App_Config\Include\Elision\Elision.Search.config.example" />
+    </Content>
+    <Content Include="App_Config\Include\Elision\Elision.Search.config.example" />
     <Content Include="App_Config\Include\Elision\Elision.Mvc.config">
       <SubType>Designer</SubType>
     </Content>
