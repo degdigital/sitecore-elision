@@ -10,11 +10,11 @@ namespace Elision.Web.Controllers
     {
         public ActionResult Fragment(RenderingActionArgs args)
         {
-            var model = new FragmentModel
-                {
-                    WebEditUrl = string.Format("/?sc_mode=edit&sc_itemid={0}&sc_lang={1}",
-                                               HttpUtility.UrlEncode(args.DatasourceItem.ID.ToString()), args.DatasourceItem.Language)
-                };
+            var model = new FragmentModel();
+                //{
+                //    WebEditUrl = string.Format("/?sc_mode=edit&sc_itemid={0}&sc_lang={1}",
+                //                               HttpUtility.UrlEncode(args.DatasourceItem.ID.ToString()), args.DatasourceItem.Language)
+                //};
 
             return View(model);
         }

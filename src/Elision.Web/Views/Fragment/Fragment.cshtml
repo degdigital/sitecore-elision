@@ -1,9 +1,3 @@
 @using Elision.DynamicPlaceholders
 @model Elision.Web.Models.FragmentModel
-@if (Sitecore.Context.PageMode.IsPageEditorEditing)
-{
-    <div>
-        Fragment
-    </div>
-}
 @Html.Sitecore().DynamicPlaceholder("fragment", new {disablewebedit = true})

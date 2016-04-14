@@ -98,6 +98,8 @@ namespace Elision.ContentEditor.UpdateReferences
 
         private static string GetLayoutFieldValue(Field field)
         {
+            return LayoutField.GetFieldValue(field);
+
             var value = field.GetValue(true, true);
             var func = XmlDeltas.WithEmptyValue("<r />");
             if (string.IsNullOrEmpty(value))
@@ -159,11 +161,19 @@ namespace Elision.ContentEditor.UpdateReferences
             // and any change to template will not reflect in derived pages.
             if (field.ID == Sitecore.FieldIDs.LayoutField || field.ID == Sitecore.FieldIDs.FinalLayoutField)
             {
+                using (new Sitecore.Data.Events.EventDisabler())
+                using (new EditContext(field.Item, SecurityCheck.Disable))
+                {
+                    LayoutField.SetFieldValue(field, value.ToString());
+                }
                 //Difference of old value and new updated value, thus inheritance remain in place.
                 //Try to get new patch.
-                initialValue = XmlDeltas.ApplyDelta(fieldValue, initialValue);
+                //initialValue = XmlDeltas.ApplyDelta(fieldValue, initialValue);
             }
-            UpdateFieldValue(field, initialValue, value);
+            else
+            {
+                UpdateFieldValue(field, initialValue, value);
+            }
         }
 
         private void UpdateFieldValue(Field field, string initialValue, StringBuilder value)
