@@ -17,21 +17,31 @@ namespace Elision.Web.Models
             ContextSitePage = contextSitePage;
         }
 
+        protected HtmlString _navigationText { get; set; }
         public HtmlString NavigationText
         {
             get
             {
-                var navText = InnerItem.Fields.GetValue(NavigableFieldIDs.NavigationText);
-                if (string.IsNullOrWhiteSpace(navText))
+                if (_navigationText == null)
                 {
-                    var linkField = (LinkField) InnerItem.Fields[MenuLinkFieldIDs.Link];
-                    navText = linkField != null && linkField.HasValue()
-                                  ? linkField.Text
-                                  : null;
+                    var navText = InnerItem.Fields.GetValue(NavigableFieldIDs.NavigationText);
+                    if (string.IsNullOrWhiteSpace(navText))
+                    {
+                        var linkField = (LinkField)InnerItem.Fields[MenuLinkFieldIDs.Link];
+                        navText = linkField != null && linkField.HasValue()
+                                      ? linkField.Text
+                                      : null;
+                    }
+                    _navigationText = new HtmlString(navText
+                                              .Or(InnerItem.DisplayName)
+                                              .Or(InnerItem.Name));                    
                 }
-                return new HtmlString(navText
-                                          .Or(InnerItem.DisplayName)
-                                          .Or(InnerItem.Name));
+                return _navigationText;
+            }
+            set
+            {
+                if (!string.IsNullOrWhiteSpace(value?.ToString()))
+                    _navigationText = value;
             }
         }
         public bool IsActive { get { return InnerItem != null && ContextSitePage != null && InnerItem.ID == ContextSitePage.ID; } }
