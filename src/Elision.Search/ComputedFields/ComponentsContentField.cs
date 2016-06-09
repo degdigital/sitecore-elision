@@ -17,7 +17,7 @@ namespace Elision.Search.ComputedFields
 
             if (sitecoreIndexable == null) return null;
 
-            var customDataSources = ExtractRenderingDataSourceItems(sitecoreIndexable.Item);
+            var customDataSources = ExtractRenderingDataSourceItems(sitecoreIndexable.Item).Where(x => x != null);
 
             var contentToAdd = customDataSources.SelectMany(GetItemContent).ToList();
 
