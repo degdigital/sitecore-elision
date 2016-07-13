@@ -1,11 +1,18 @@
 using Elision.Sitemap.GenerateSitemapXml;
 using System.Web;
 using Sitecore.Pipelines;
+using Sitecore.Pipelines.HttpRequest;
 
 namespace Elision.Web.Pipelines.HttpRequestBegin
 {
-    public class SitemapXmlProcessor : IHttpHandler
+    public class SitemapXmlProcessor : HttpRequestProcessor, IHttpHandler
     {
+
+        public override void Process(HttpRequestArgs args)
+        {
+            ProcessRequest(args.Context);
+        }
+
         public void ProcessRequest(HttpContext context)
         {
             var args = new GenerateSitemapArgs()

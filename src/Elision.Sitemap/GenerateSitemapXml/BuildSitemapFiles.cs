@@ -33,7 +33,17 @@ namespace Elision.Sitemap.GenerateSitemapXml
             }
 
             if (args.SitemapFiles.Count > 1)
+            {
                 args.SitemapFiles.Insert(0, BuildSitemapIndexFile(args));
+            }                
+            else
+            {
+                var sitemapFile = new StringBuilder();
+                sitemapFile.Append(BuildSitemapFileHeader());
+                sitemapFile.Append(sitemap);
+                sitemapFile.Append(BuildSitemapFileFooter());
+                args.SitemapFiles.Add(sitemapFile.ToString());
+            }
         }
 
         protected virtual string BuildSitemapIndexFile(GenerateSitemapArgs args)
