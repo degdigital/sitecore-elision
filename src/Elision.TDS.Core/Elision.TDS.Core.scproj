@@ -1,4 +1,5 @@
-﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -28,16 +29,22 @@
     <DebugSymbols>false</DebugSymbols>
     <OutputPath>..\..\temp\Release\</OutputPath>
     <RecursiveDeployAction>SitecoreRecycle</RecursiveDeployAction>
-    <PackageName></PackageName>
+    <PackageName>
+    </PackageName>
     <GeneratePackage>False</GeneratePackage>
     <SeperateFilesAndItems>False</SeperateFilesAndItems>
     <PackageExcludeCode>False</PackageExcludeCode>
     <AddDateTimeToPackageName>False</AddDateTimeToPackageName>
-    <PackageAuthor></PackageAuthor>
-    <PackagePublisher></PackagePublisher>
-    <PackageReadme></PackageReadme>
-    <PackageVersion></PackageVersion>
-    <SitecoreAssemblyPath></SitecoreAssemblyPath>
+    <PackageAuthor>
+    </PackageAuthor>
+    <PackagePublisher>
+    </PackagePublisher>
+    <PackageReadme>
+    </PackageReadme>
+    <PackageVersion>
+    </PackageVersion>
+    <SitecoreAssemblyPath>
+    </SitecoreAssemblyPath>
     <InstallSitecoreConnector>False</InstallSitecoreConnector>
     <DisableFileDeployment>True</DisableFileDeployment>
     <EnableValidations>True</EnableValidations>
@@ -46,7 +53,6 @@
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>false</DebugSymbols>
     <RecursiveDeployAction>SitecoreRecycle</RecursiveDeployAction>
-
     <InstallSitecoreConnector>False</InstallSitecoreConnector>
     <DisableFileDeployment>True</DisableFileDeployment>
     <OutputPath>..\..\temp\Debug\</OutputPath>
@@ -113,6 +119,10 @@
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\Applications\WebEdit\Ribbons\WebEdit\Page\Metadata.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Applications\WebEdit\Ribbons\WebEdit\Page\Metadata\OpenGraph.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
