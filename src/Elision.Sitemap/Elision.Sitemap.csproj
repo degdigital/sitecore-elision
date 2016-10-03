@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Caching\SitemapXmlCache.cs" />
     <Compile Include="GenerateSitemapXml\AbortPipelineIfNoCacheKey.cs" />
+    <Compile Include="GenerateSitemapXml\FilterPageItems.cs" />
     <Compile Include="GenerateSitemapXml\GetCacheKey.cs" />
     <Compile Include="GenerateSitemapXml\ReturnSitemapFromCache.cs" />
     <Compile Include="GenerateSitemapXml\StoreSitemapsCache.cs" />

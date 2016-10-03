@@ -20,6 +20,7 @@
         <processor type="Elision.Sitemap.GenerateSitemapXml.ReturnSitemapFromCache, Elision.Sitemap" />
         <processor type="Elision.Sitemap.GenerateSitemapXml.GetSitemapRoot, Elision.Sitemap" />
         <processor type="Elision.Sitemap.GenerateSitemapXml.GetPageItems, Elision.Sitemap" />
+        <processor type="Elision.Sitemap.GenerateSitemapXml.FilterPageItems, Elision.Sitemap" />
         <processor type="Elision.Sitemap.GenerateSitemapXml.BuildSitemapFiles, Elision.Sitemap" />
         <processor type="Elision.Sitemap.GenerateSitemapXml.StoreSitemapsCache, Elision.Sitemap" />
         <processor type="Elision.Sitemap.GenerateSitemapXml.ReturnSitemapFromCache, Elision.Sitemap" />
