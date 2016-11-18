@@ -81,7 +81,7 @@ namespace Elision.Mvc.GetAreaAndNamespaces
 
         protected virtual bool NamespaceCouldBeForArea(string namespaceName, string areaName)
         {
-            return Regex.IsMatch(namespaceName, @"\bAreas\." + areaName, RegexOptions.IgnoreCase);
+            return Regex.IsMatch(namespaceName, @"\bAreas\." + areaName + @"\.", RegexOptions.IgnoreCase);
         }
     }
 }
