@@ -29,8 +29,13 @@ namespace Elision.Rules.PlaceholderSettings
             if (!renderings.Any())
                 return false;
             
-            var isNested = renderings.Any(x => x.ItemID.Equals(RenderingItemId, StringComparison.InvariantCultureIgnoreCase) && enhancedContext.PlaceholderKeyPath.StartsWith(x.Placeholder));
+            var isNested = renderings.Any(x => x.ItemID.Equals(RenderingItemId, StringComparison.InvariantCultureIgnoreCase) && EnsurePrefix(enhancedContext.PlaceholderKeyPath).StartsWith(EnsurePrefix(x.Placeholder)));
             return isNested;
+        }
+
+        protected virtual string EnsurePrefix(string placeholder)
+        {
+            return placeholder.StartsWith("/") ? placeholder : "/" + placeholder;
         }
     }
 }
