@@ -10,7 +10,7 @@ namespace Elision.Web.Controllers
 
         public MetadataController(IPageMetadataModelBuilder modelBuilder)
         {
-            _modelBuilder = modelBuilder;
+            _modelBuilder = modelBuilder ?? new PageMetadataModelBuilder();
         }
 
         public System.Web.Mvc.ActionResult PageMetadata()
